@@ -1,0 +1,8 @@
+project: savantenvs/grok
+target: grk_compress_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar   # accumulation
+  - file://mayhem/grk_compress_fuzzer/testsuite                           # per-target starter seeds
+cmds:
+  - cmd: /mayhem/grk_compress_fuzzer
+    libfuzzer: true
