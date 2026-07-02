@@ -1,0 +1,9 @@
+project: savantenvs/grok
+target: grk_decompress_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar   # accumulation
+  - file://mayhem/grk_decompress_fuzzer/testsuite                         # per-target starter seeds
+cmds:
+  - cmd: /mayhem/grk_decompress_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/grk_decompress_fuzzer.dict
